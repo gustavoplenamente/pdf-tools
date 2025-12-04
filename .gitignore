@@ -30,6 +30,7 @@ MANIFEST
 # PyInstaller
 *.manifest
 *.spec
+!pdf_ocr.spec
 
 # Virtual environments
 venv/
@@ -51,6 +52,13 @@ test_pdfs/
 
 # Poppler installation
 poppler/
+
+# Build and distribution artifacts
+installer_files/
+Output/
+
+# App icon (generated)
+!app_icon.ico
 
 # OS
 .DS_Store

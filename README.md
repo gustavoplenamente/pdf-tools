@@ -132,30 +132,55 @@ python c:\Users\Gustavo\Projects\pdf-ocr\main.py
 - **OCR Quality**: Higher quality scans produce better OCR results
 - **Processing Time**: OCR can take several seconds per page depending on PDF size and complexity
 
-## Building a Standalone Executable
+## Distribution
 
-To create a standalone executable that doesn't require Python installation:
+This application can be distributed in two ways:
 
-### Install PyInstaller
-```bash
-pip install pyinstaller
-```
+### Option 1: Installer with Wizard (Recommended for End Users)
+A professional Windows installer that includes all dependencies:
 
-### Build the Executable
+1. **Build the installer** (see [BUILD.md](BUILD.md) for detailed instructions):
+   ```bash
+   python build.py
+   ```
 
-**Windows:**
-```bash
-pyinstaller --onefile --windowed --name="PDF-OCR" --icon=NONE main.py
-```
+2. **Share the installer**: 
+   - Location: `Output/PDF_OCR_Setup_1.0.0.exe`
+   - Size: ~100 MB
+   - Includes: Application + Tesseract OCR + Poppler utilities
 
-**Linux:**
-```bash
-pyinstaller --onefile --windowed --name="PDF-OCR" main.py
-```
+**Benefits:**
+- ✅ Professional installation wizard
+- ✅ Automatic Tesseract installation
+- ✅ Desktop and Start Menu shortcuts
+- ✅ Easy uninstallation
+- ✅ No Python required
 
-The executable will be created in the `dist` folder.
+### Option 2: Portable ZIP Package
+A standalone package that can run without installation:
 
-**Note:** You'll still need to install Tesseract OCR separately on the target system.
+1. **Build the portable version**:
+   ```bash
+   python build.py
+   ```
+
+2. **Share the ZIP file**:
+   - Location: `dist/PDF_OCR_Portable.zip`
+   - Size: ~80 MB
+   - Users must install Tesseract OCR separately
+
+**Benefits:**
+- ✅ No installation needed
+- ✅ Can run from USB drive
+- ✅ Smaller file size
+
+### Build Documentation
+
+For complete build instructions, troubleshooting, and customization options, see **[BUILD.md](BUILD.md)**.
+
+## Building from Source (For Developers)
+
+If you want to run the application from source code instead of using the installers above:
 
 ## Dependencies
 
